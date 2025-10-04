@@ -1,4 +1,4 @@
-# flipcard
+﻿# flipcard
 
 Pastel, accessible starter built with Vite, React, TypeScript, and Tailwind CSS.
 
@@ -42,5 +42,4 @@ npm run dev
 
 ## Known Issues / TODOs
 - None at the moment.
-
 

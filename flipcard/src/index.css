@@ -1,0 +1,92 @@
+/* The following Tailwind directives require processing by Tailwind CLI or PostCSS.
+   If you see an error like "Unknown at rule @tailwind", make sure your build tool is set up for Tailwind CSS.
+   See https://tailwindcss.com/docs/installation for setup instructions. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-sans antialiased;
+    color: var(--color-ink);
+    background-color: var(--color-sky);
+  }
+
+  body {
+    @apply min-h-screen;
+    margin: 0;
+    color: var(--color-ink-muted);
+    background-attachment: fixed;
+    background-image: var(--gradient-app);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  body.reduced-motion *,
+  body.reduced-motion *::before,
+  body.reduced-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  .surface-card {
+    @apply rounded-3xl p-8 shadow-xl backdrop-blur-md ring-1 transition-all duration-300;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-soft);
+    --tw-ring-color: var(--color-border);
+  }
+
+  .surface-panel {
+    @apply rounded-3xl ring-1 backdrop-blur-sm transition-all duration-300;
+    background: var(--color-surface-strong);
+    box-shadow: var(--shadow-soft);
+    --tw-ring-color: var(--color-border);
+  }
+
+  .surface-panel:hover,
+  .surface-panel:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 32px 64px -40px rgba(31, 41, 55, 0.45);
+  }
+
+  .chip-button {
+    @apply inline-flex min-h-[2.75rem] items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+    color: var(--color-ink);
+    background-color: transparent;
+  }
+
+  .chip-button--primary {
+    background-color: var(--color-sage);
+    box-shadow: var(--shadow-soft);
+  }
+}
+
+@layer utilities {
+  .bg-app {
+    background-image: var(--gradient-app);
+  }
+
+  .text-ink-muted {
+    color: var(--color-ink-muted);
+  }
+
+  .text-ink-soft {
+    color: var(--color-ink-soft);
+  }
+
+  .border-ink-soft {
+    border-color: var(--color-border);
+  }
+
+  .border-ink-strong {
+    border-color: var(--color-border-strong);
+  }
+}
