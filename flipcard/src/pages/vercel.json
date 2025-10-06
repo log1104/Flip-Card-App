@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "src/pages/**/*.tsx": {
+      "includeFiles": "package.json"
+    }
+  }
+}
